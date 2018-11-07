@@ -187,7 +187,7 @@ print(model, file=sys.stderr)
 print('cifar10.py: initializing optimizer...', file=sys.stderr)
 
 if args.lr_schedule == 'linear_cycle':
-    lr_scheduler = HPSchedule.linear_cycle(hp_max=args.lr_max, epochs=args.epochs, extra=args.extra)
+    lr_scheduler = HPSchedule.one_cycle(hp_max=args.lr_max, epochs=args.epochs, extra=args.extra)
 elif args.lr_schedule == 'sgdr':
     lr_scheduler = HPSchedule.sgdr(
         hp_init=args.lr_max,
